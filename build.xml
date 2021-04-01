@@ -31,7 +31,7 @@
 <!--    // and stored in the "dist" folder.-->
     <target name="dist" depends="compile">
         <jar destfile="${dist.dir}/${dist.file}_${target.env}_${dist.version}.jar" basedir="${build.dir}" >
-            <zipgroupfileset dir="${lib.dir}" includes="**/*. jar"/>
+            <zipgroupfileset dir="${lib.dir}" includes="**/*.jar"/>
             <manifest >
                 <attribute name="Main-Class" value="ch.fhnw.medicalinformatics.Loader_V2"/>
             </manifest>
