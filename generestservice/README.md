@@ -49,4 +49,5 @@ Sample call from the browser:
 
     http://localhost:8080/geneservice/byid?id=11494045
     http://localhost:8080/geneservice/bysymbol?symbol=NDAI0A08340
+    http://localhost:8080/geneservice/bydescription?description=hypothetical (May take a while to load)
 
