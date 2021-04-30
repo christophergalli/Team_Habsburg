@@ -1,0 +1,40 @@
+<project name="DataLoaderComponent" default="dist" basedir=".">
+
+    <property file ="build.properties"/>
+
+    <path id="compile.classpath">
+        <fileset dir="${lib.dir}">
+            <include name="**/*. jar"/>
+        </fileset>
+    </path>
+
+<!--    // the target "clean" holds the tasks to delete the directories (build, dist)-->
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+
+<!--    // the target "init" holds the tasks for creating two directories (build, dist)-->
+    <target name="init">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${dist.dir}"/>
+    </target>
+
+<!--    // the target "compile" is dependent on "init" (will call this target if it has-->
+<!--    // not been executed. It holds the task that compiles the code in the src folder-->
+    <target name="compile" depends="init">
+        <javac srcdir="src" destdir="${build.dir}" classpath="compile.classpath"/>
+    </target>
+
+<!--    // the target "dist" is dependent on "compile". It is used to deliver all-->
+<!--    // necessary libraries along with the code. These libraries are zipped.-->
+<!--    // and stored in the "dist" folder.-->
+    <target name="dist" depends="compile">
+        <jar destfile="${dist.dir}/${dist.file}_${target.env}_${dist.version}.jar" basedir="${build.dir}" >
+            <zipgroupfileset dir="${lib.dir}" includes="**/*.jar"/>
+            <manifest >
+                <attribute name="Main-Class" value="ch.fhnw.medicalinformatics.Loader_V2"/>
+            </manifest>
+        </jar>
+    </target>
+</project>
