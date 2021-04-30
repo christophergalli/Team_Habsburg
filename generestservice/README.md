@@ -21,7 +21,7 @@ has not yet been covered.
 After building the package, the following command could be used
 to start the application:
 
-    java -jar target/JAR_FILE.jar
+    java -jar target/GeneRestService-0.0.1-SNAPSHOT.jar
 
 Adapt the JAR_FILE with the real file name, depending on your project
 settings.
