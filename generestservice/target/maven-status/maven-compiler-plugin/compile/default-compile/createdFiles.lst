@@ -1,6 +1,6 @@
-ch/fhnw/medicalinformatics/GeneService.class
-ch/fhnw/medicalinformatics/GeneType.class
-ch/fhnw/medicalinformatics/GeneRepository.class
-ch/fhnw/medicalinformatics/RestServiceApplication.class
-ch/fhnw/medicalinformatics/GeneController.class
-ch/fhnw/medicalinformatics/Gene.class
+ch\fhnw\medicalinformatics\Gene.class
+ch\fhnw\medicalinformatics\GeneService.class
+ch\fhnw\medicalinformatics\RestServiceApplication.class
+ch\fhnw\medicalinformatics\GeneRepository.class
+ch\fhnw\medicalinformatics\GeneController.class
+ch\fhnw\medicalinformatics\GeneType.class
