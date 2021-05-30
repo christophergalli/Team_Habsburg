@@ -7,9 +7,11 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 
+
 <h:head>
 	<title>FHNW - MSCMI - Gene Information Service</title>
 </h:head>
+
 
 <h:body>
 
@@ -17,19 +19,17 @@
 	<br />
 	<h1 class="title ui-widget-header">FHNW - MSCMI - Gene Information Service</h1>
 	<br />
-	<p:graphicImage url="3393327-200.png" height="200px" />
+	<p:graphicImage url="GeneService.png" height="400px" />
 
 	<h:form id="inputform">
-		<p:selectOneMenu id="searchoption" value="#{geneService.searchOption}" style="width:250px">
-        	<f:selectItem itemLabel="Select Search Option" itemValue="" noSelectionOption="true"/>
-        	<f:selectItems value="#{geneService.searchOptions}"/>
-        </p:selectOneMenu>
-        
-        <h:outputLabel for="stlbl" value="Search Term"/>
-        <p:inputText id="searchterm" value="#{geneService.searchTerm}" required="true" label="Search Term">
+		<p:selectOneRadio id="console" value="#{geneService.searchOption}" unselectable="true" style="display: inline">
+		<f:selectItems value="#{geneService.searchOptions}"/>
+		</p:selectOneRadio>
+
+        <h:outputLabel for="stlbl" value="Search Term" style="display: inline"/>
+        <p:inputText id="searchterm" value="#{geneService.searchTerm}" required="true" label="Search Term" style="display: inline">
         </p:inputText>
-        
-		<p:commandButton id="retrieveButton" value="Retrieve Data" action="#{geneService.retrieveData()}" update="datatable"></p:commandButton>
+		<p:commandButton id="retrieveButton" value="Retrieve Data" action="#{geneService.retrieveData()}" update="datatable" style="display: inline"></p:commandButton>
 
 		<p:dataTable id="datatable" var="gene" value="#{geneService.genes}">
 		

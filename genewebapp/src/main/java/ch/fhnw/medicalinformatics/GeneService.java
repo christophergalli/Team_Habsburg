@@ -13,11 +13,16 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+
 
 @NamedEvent
 @ApplicationScoped
 @ManagedBean(name = "geneService")
 public class GeneService {
+	private static Logger logger = LogManager.getLogger(Main.class);
 
 	private String searchOption;
 	private String searchTerm;
@@ -25,7 +30,11 @@ public class GeneService {
 	private String hostname = "http://localhost:8080";
 	
 	private final OkHttpClient httpClient;
-	
+
+	logger.info("Program started with Parameter " + args[0]);
+
+
+
 	public GeneService() {
 		httpClient = new OkHttpClient.Builder()
 			      .connectTimeout(180, TimeUnit.SECONDS)
@@ -59,7 +68,7 @@ public class GeneService {
 	}
 
 	public void retrieveData() {
-		System.out.println("retrieve data");
+		logger.info("retrieve data");
 		data.clear();
 		// retrieve data from the service
 		Request request = null;
@@ -71,11 +80,11 @@ public class GeneService {
 		} else if (searchOption.toUpperCase().contains("DESCRIPTION")) {
 			serviceCall = "/geneservice/bydescription?description=" + searchTerm;
 		} else {
-			System.out.println("invalid search");
+			logger.info("invalid search");
 			// TODO: Exception Handling
 		}
-		
-		System.out.println("URL: " + hostname + serviceCall);
+
+		logger.info("URL: " + hostname + serviceCall);
 		
 		request = new Request.Builder().url(hostname + serviceCall).build();
 		
