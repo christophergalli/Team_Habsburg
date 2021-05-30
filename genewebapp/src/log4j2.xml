@@ -17,8 +17,8 @@
     </Appenders>
 
     <Loggers>
-        <Logger name="ch.fhnw.lifescience" level="debug" additivity="true">
-            <appender-ref ref="fileLogger" level="error" />
+        <Logger name="main.java.ch.fhnw.medicalinformatics" level="debug" additivity="true">
+            <appender-ref ref="fileLogger" level="info" />
         </Logger>
         <Root level="debug" additivity="false">
             <appender-ref ref="console" />

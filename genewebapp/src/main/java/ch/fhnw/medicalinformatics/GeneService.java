@@ -22,17 +22,14 @@ import org.apache.logging.log4j.Logger;
 @ApplicationScoped
 @ManagedBean(name = "geneService")
 public class GeneService {
-	private static Logger logger = LogManager.getLogger(Main.class);
+	private static Logger logger = LogManager.getLogger(GeneService.class);
 
 	private String searchOption;
 	private String searchTerm;
 	private List<Gene> data = new ArrayList<>();
 	private String hostname = "http://localhost:8080";
-	
+
 	private final OkHttpClient httpClient;
-
-	logger.info("Program started with Parameter " + args[0]);
-
 
 
 	public GeneService() {
@@ -42,15 +39,16 @@ public class GeneService {
 			      .writeTimeout(180, TimeUnit.SECONDS)
 			      .build();
 	}
-	
+
 	public List<String> getSearchOptions() {
 		List<String> result = new ArrayList<String>();
 		result.add("Search by ID");
 		result.add("Search by Symbol");
 		result.add("search by Description");
+//		logger.info("appended a new search");
 		return result;
-	}	
-	
+	}
+
 	public String getSearchOption() {
 		return searchOption;
 	}
@@ -58,7 +56,7 @@ public class GeneService {
 	public void setSearchOption(String searchOption) {
 		this.searchOption = searchOption;
 	}
-	
+
 	public String getSearchTerm() {
 		return searchTerm;
 	}
@@ -85,9 +83,9 @@ public class GeneService {
 		}
 
 		logger.info("URL: " + hostname + serviceCall);
-		
+
 		request = new Request.Builder().url(hostname + serviceCall).build();
-		
+
 		try (Response response = httpClient.newCall(request).execute()) {
 			Gson g = new Gson();
 			Type resultType = null;
@@ -103,7 +101,7 @@ public class GeneService {
 			ex.printStackTrace();
 		}
 	}
-	
+
 	public List<Gene> getGenes() {
 		return data;
 	}
