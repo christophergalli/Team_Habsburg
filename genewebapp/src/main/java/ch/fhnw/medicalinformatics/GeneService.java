@@ -42,6 +42,7 @@ public class GeneService {
 
 	public List<String> getSearchOptions() {
 		List<String> result = new ArrayList<String>();
+		logger.info("Appending something to the magic list");
 		result.add("Search by ID");
 		result.add("Search by Symbol");
 		result.add("search by Description");
