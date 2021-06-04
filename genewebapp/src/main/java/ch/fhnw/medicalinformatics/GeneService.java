@@ -13,8 +13,8 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 
@@ -22,7 +22,7 @@ import org.apache.logging.log4j.Logger;
 @ApplicationScoped
 @ManagedBean(name = "geneService")
 public class GeneService {
-	private static Logger logger = LogManager.getLogger(GeneService.class);
+	private static final Logger logger = LoggerFactory.getLogger(GeneService.class);
 
 	private String searchOption;
 	private String searchTerm;
@@ -45,7 +45,7 @@ public class GeneService {
 		result.add("Search by ID");
 		result.add("Search by Symbol");
 		result.add("search by Description");
-//		logger.info("appended a new search");
+		logger.info("appended a new search");
 		return result;
 	}
 
