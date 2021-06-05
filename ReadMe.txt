@@ -10,3 +10,9 @@ The repository contains the following artifacts:
 In addition, we have uploaded the following documents:
 1) Presentation of the project (.ppt)
 2) Documentation for the client (.pdf)
+
+
+
+Note: If you are not a windows user, please modify the location of the log file for the webapp as follows:
+-	Logback.xml (within the resource folder)
+-	Line 4: value=”path”
