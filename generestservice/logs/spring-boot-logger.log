@@ -43,3 +43,4 @@
 2021-06-11 11:40:18,381 DEBUG ch.fhnw.medicalinformatics.GeneController [http-nio-8080-exec-3] Du hast das Gen mit der id 789 aufgerufen.
 2021-06-11 11:43:49,708 DEBUG ch.fhnw.medicalinformatics.GeneController [http-nio-8080-exec-5] Du hast das Gen mit der id 776 aufgerufen.
 2021-06-11 11:45:57,541 DEBUG ch.fhnw.medicalinformatics.GeneController [http-nio-8080-exec-9] Du hast das Gen mit der id 86 aufgerufen.
+2021-06-11 11:46:10,371 DEBUG ch.fhnw.medicalinformatics.GeneController [http-nio-8080-exec-10] Folgende Gene enthalten die Beschreibung AAC
