@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css"/>
+    <script src="../javascript/feedback_com.js" defer="defer"></script>
+    <title>FHNW - MSCMI - Gene Information Service</title>
+</head>
+<body>
+
+<nav>
+    <ul id="navigation-root">
+        <li><a href="../mainpage.xhtml">Gene Service</a></li>
+    </ul>
+
+    <div id="navigation-main" class="dropdown-container">
+            <ul id="navigation-main-pages">
+            <li><a href="Feedback.html">Feedback</a></li>
+        </ul>
+    </div>
+</nav>
+<section id="feedback" class="main-content">
+    <h1>Tell us your feedback</h1>
+
+    <form method="post" action="Post.html">
+        <div class="question">
+            <label class="question">How do you like the Gene Webapp? *</label>
+            <ul class="radio">
+                <li>
+                    <input id="rating-webapp-awesome" type="radio" name="rating-webapp" value="awesome" />
+                    <label for="rating-webapp-awesome">Awesome</label>
+                </li>
+                <li>
+                    <input id="rating-webapp-good" type="radio" name="rating-webapp" value="good" />
+                    <label for="rating-webapp-good">Good</label>
+                </li>
+                <li>
+                    <input id="rating-webapp-okay" type="radio" name="rating-webapp" value="okay" />
+                    <label for="rating-webapp-okay">Okay</label>
+                </li>
+                <li>
+                    <input id="rating-webapp-poor" type="radio" name="rating-webapp" value="poor" />
+                    <label for="rating-webapp-poor">Poor</label>
+                </li>
+            </ul>
+            <span id="webapp-error" class="error-message"></span>
+        </div>
+
+        <div class="question">
+            <label class="question">What do you think about the Usability? *</label>
+            <ul class="radio">
+                <li>
+                    <input id="rating-usability-fair" type="radio" name="rating-usability" value="fair" />
+                    <label for="rating-usability-fair">Great</label>
+                </li>
+                <li>
+                    <input id="rating-usability-okay" type="radio" name="rating-usability" value="okay" />
+                    <label for="rating-usability-okay">Okay</label>
+                </li>
+                <li>
+                    <input id="rating-usability-expensive" type="radio" name="rating-usability" value="expensive" />
+                    <label for="rating-usability-expensive">Confusing</label>
+                </li>
+            </ul>
+            <span id="usability-error" class="error-message"></span>
+        </div>
+
+        <div class="question">
+            <label for="customer-name" class="question">Your name? *</label>
+            <input id="customer-name" class="textinput" type="text" name="customer-name" />
+            <span id="name-error" class="error-message"></span>
+        </div>
+        <div class="question">
+            <label for="customer-email" class="question">Your e-mail address? *</label>
+            <input id="customer-email" class="textinput" type="email" name="customer-email" />
+            <span id="mail-error" class="error-message"></span>
+        </div>
+        <div class="question">
+            <label for="suggestions" class="question">What can we do better? *</label>
+            <textarea id="suggestions" class="textinput" name="suggestions"></textarea>
+            <span id="suggestions-error" class="error-message"></span>
+        </div>
+
+        <div class="buttons">
+            <input type="submit" value="Send" />
+        </div>
+        <div class="alert alert-error"></div>
+        <div class="alert alert-success"></div>
+    </form>
+</section>
+
+</body>
+</html>

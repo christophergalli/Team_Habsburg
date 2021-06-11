@@ -1,38 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://primefaces.org/ui">
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui">
 
 
 <h:head>
 	<title>FHNW - MSCMI - Gene Information Service</title>
+	<link rel="stylesheet" href="css/style.css"/>
 </h:head>
 
+<body>
+	<nav>
+		<ul id="navigation-root">
+			<li><a href="mainpage.xhtml">Gene Service</a></li>
+		</ul>
 
-<h:body>
-
-	<p:graphicImage url="logo_fhnw.jpg" height="50px" />
+		<div id="navigation-main" class="dropdown-container">
+			<ul id="navigation-main-pages">
+				<li><a href="html/Feedback.html">Feedback</a></li>
+			</ul>
+		</div>
+	</nav>
+	<p:graphicImage url="images/logo_fhnw.jpg" height="50px" />
 	<br />
-	<h1 class="title ui-widget-header">FHNW - MSCMI - Gene Information Service</h1>
+	<h1 class="title ui-widget-header">FHNW – MSCMI – Gene Information Service</h1>
 	<br />
-	<p:graphicImage url="GeneService.png" height="400px" />
+	<p:graphicImage url="images/GeneService.png" height="400px" class="center"/>
 
 	<h:form id="inputform">
 		<p:selectOneRadio id="console" value="#{geneService.searchOption}" unselectable="true" style="display: inline">
-		<f:selectItems value="#{geneService.searchOptions}"/>
+			<f:selectItems value="#{geneService.searchOptions}"/>
 		</p:selectOneRadio>
 
-        <h:outputLabel for="stlbl" value="Search Term" style="display: inline"/>
-        <p:inputText id="searchterm" value="#{geneService.searchTerm}" required="true" label="Search Term" style="display: inline">
-        </p:inputText>
+		<h:outputLabel for="stlbl" value="Search Term" style="display: inline"/>
+		<p:inputText id="searchterm" value="#{geneService.searchTerm}" required="true" label="Search Term" style="display: inline">
+		</p:inputText>
 		<p:commandButton id="retrieveButton" value="Retrieve Data" action="#{geneService.retrieveData()}" update="datatable" style="display: inline"></p:commandButton>
 
 		<p:dataTable id="datatable" var="gene" value="#{geneService.genes}">
-		
+
 			<p:column headerText="Id">
 				<h:outputText value="#{gene.geneId}" />
 			</p:column>
@@ -52,9 +62,9 @@
 			<p:column headerText="description">
 				<h:outputText value="#{gene.description}" />
 			</p:column>
-		
-		</p:dataTable>
-		</h:form>
 
-</h:body>
+		</p:dataTable>
+	</h:form>
+
+</body>
 </html>
