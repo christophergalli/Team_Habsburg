@@ -9,7 +9,7 @@ The repository contains the following artifacts:
 
 In addition, we have uploaded the following documents:
 1) Presentation of the project (.ppt)
-2) Documentation for the client (.pdf)
+2) Documentation for the client (.docx)
 
 
 
